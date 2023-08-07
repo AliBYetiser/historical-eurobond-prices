@@ -1,5 +1,4 @@
 from selenium import webdriver
-from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait as wait
@@ -7,17 +6,21 @@ from selenium.common.exceptions import TimeoutException
 import csv
 from pathlib import Path
 from datetime import datetime
+from selenium.webdriver.chrome.service import Service
 
-date = datetime.now().strftime("%d-%m-%Y")
 # define target file to write into
 dir_path = Path("./data/")
+date = datetime.now().strftime("%d-%m-%Y")
 file_name = "isbank_eurobond_data_" + date + ".csv"
 file_path = dir_path.joinpath(file_name)
 
-# Create webdriver options and the driver
+service = Service(executable_path=r'/usr/bin/chromedriver')
 options = webdriver.ChromeOptions()
-# options.add_argument('--headless')
-driver = webdriver.Chrome(options=options)
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(service=service, options=options)
+
 # Get the website
 driver.get(
     "https://www.isbank.com.tr/fiyatoran/FiyatTabloGosterV2.asp?trkd=*EUB&amp;tip=HTML"
