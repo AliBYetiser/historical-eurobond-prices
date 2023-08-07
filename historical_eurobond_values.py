@@ -10,7 +10,7 @@ from datetime import datetime
 
 date = datetime.now().strftime("%d-%m-%Y")
 # define target file to write into
-dir_path = Path("./")
+dir_path = Path("./data/")
 file_name = "isbank_eurobond_data_" + date + ".csv"
 file_path = dir_path.joinpath(file_name)
 
