@@ -11,7 +11,7 @@ from datetime import datetime
 from selenium.webdriver.chrome.service import Service
 
 # define target file to write into
-dir_path = Path("./data/")
+dir_path = Path("./data/isbank/")
 date = datetime.now().strftime("%d-%m-%Y")
 file_name = "isbank_eurobond_data_" + date + ".csv"
 file_path = dir_path.joinpath(file_name)
