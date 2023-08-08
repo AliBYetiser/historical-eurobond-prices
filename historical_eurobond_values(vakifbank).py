@@ -123,4 +123,3 @@ with open(file_path_sell, "w", newline="") as csv_file:
     csv_writer.writerow(header_row)
     for row in data:
         csv_writer.writerow(row)
-
