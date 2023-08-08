@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.service import Service
 # define target file to write into
 dir_path = Path("./data/isbank/")
 date = datetime.now().strftime("%d-%m-%Y")
-file_name = "isbank_eurobond_data_" + date + ".csv"
+file_name = "isbank_eurobond_" + date + ".csv"
 file_path = dir_path.joinpath(file_name)
 
 service = Service(executable_path=r"/usr/bin/chromedriver")
@@ -81,4 +81,3 @@ with open(file_path, "w", newline="") as csv_file:
     csv_writer.writerow(header_row)
     for row in data:
         csv_writer.writerow(row)
-
