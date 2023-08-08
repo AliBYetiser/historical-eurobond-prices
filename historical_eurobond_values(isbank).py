@@ -16,18 +16,18 @@ date = datetime.now().strftime("%d-%m-%Y")
 file_name = "isbank_eurobond_data_" + date + ".csv"
 file_path = dir_path.joinpath(file_name)
 
-service = Service(executable_path=r'/usr/bin/chromedriver')
+service = Service(executable_path=r"/usr/bin/chromedriver")
 options = webdriver.ChromeOptions()
-user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'    
-options.add_argument('user-agent={0}'.format(user_agent))
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('disable-infobars')
-options.add_argument('--disable-extensions')
-options.add_argument('--disable-gpu')
-options.add_argument('--disable-dev-shm-usage')
+user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36"
+options.add_argument("user-agent={0}".format(user_agent))
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("disable-infobars")
+options.add_argument("--disable-extensions")
+options.add_argument("--disable-gpu")
+options.add_argument("--disable-dev-shm-usage")
 
-driver = webdriver.Chrome(service = service, options=options)
+driver = webdriver.Chrome(service=service, options=options)
 
 # Get the website
 driver.get(
@@ -45,7 +45,10 @@ def append_data(rows, cols):
 
 
 def find_item(i, j):
-    return driver.find_element(By.XPATH, "/html/body/form/table/tbody/tr[" + str(i) + "]/td[" + str(j) + "]",).text
+    return driver.find_element(
+        By.XPATH,
+        "/html/body/form/table/tbody/tr[" + str(i) + "]/td[" + str(j) + "]",
+    ).text
 
 
 def find_num_of_cols():
