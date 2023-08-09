@@ -71,6 +71,7 @@ driver = webdriver.Chrome(service=service, options=options)
 driver.get(
     "https://www.vakifbank.com.tr/tahvil-bono-eurobond-hesaplama-araci.aspx?pageID=2378"
 )
+time.sleep(3)
 select_name = Select(driver.find_element("id", "ctl00_ctl10_ctl00_ddlTahvilBonoUrun"))
 time.sleep(3)
 select_name.select_by_value("2")
@@ -99,6 +100,7 @@ with open(file_path_buy, "w", newline="") as csv_file:
 driver.get(
     "https://www.vakifbank.com.tr/tahvil-bono-eurobond-hesaplama-araci.aspx?pageID=2378"
 )
+time.sleep(3)
 select_name = Select(driver.find_element("id", "ctl00_ctl10_ctl00_ddlTahvilBonoUrun"))
 time.sleep(3)
 select_name.select_by_value("2")
