@@ -72,12 +72,12 @@ driver.get(
     "https://www.vakifbank.com.tr/tahvil-bono-eurobond-hesaplama-araci.aspx?pageID=2378"
 )
 time.sleep(3)
-select_name = Select(driver.find_element("id", "ctl00_ctl10_ctl00_ddlTahvilBonoUrun"))
+select_name = Select(driver.find_element("name", "ctl00$ctl10$ctl00$ddlTahvilBonoUrun"))
 time.sleep(3)
 select_name.select_by_value("2")
 time.sleep(3)
 select_action = Select(
-    driver.find_element("id", "ctl00_ctl10_ctl00_ddlTahvilIslemTipi")
+    driver.find_element("name", "ctl00$ctl10$ctl00$ddlTahvilIslemTipi")
 )
 select_action.select_by_value("1")
 time.sleep(3)
@@ -96,18 +96,7 @@ with open(file_path_buy, "w", newline="") as csv_file:
     for row in data:
         csv_writer.writerow(row)
 
-
-driver.get(
-    "https://www.vakifbank.com.tr/tahvil-bono-eurobond-hesaplama-araci.aspx?pageID=2378"
-)
-time.sleep(3)
-select_name = Select(driver.find_element("id", "ctl00_ctl10_ctl00_ddlTahvilBonoUrun"))
-time.sleep(3)
-select_name.select_by_value("2")
-time.sleep(3)
-select_action = Select(
-    driver.find_element("id", "ctl00_ctl10_ctl00_ddlTahvilIslemTipi")
-)
+time.sleep(1)
 select_action.select_by_value("2")
 time.sleep(3)
 
