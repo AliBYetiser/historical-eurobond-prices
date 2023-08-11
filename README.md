@@ -6,6 +6,12 @@ The value of eurobonds hing on a range of interconnected factors. It is influenc
 
 There is a lack of available public historical data on both government and private eurobonds in Turkey except for one government bank. **This repository functions to gather data, running daily on google cloud, from one private bank (Isbank) and two government banks (Vakifbank and Ziraatbank) where the latter also provide retrospective data.** 
 
+Data pulled from:
+[Isbank](https://www.isbank.com.tr/eurobond-fiyatlari), 
+[Vakifbank](https://www.vakifbank.com.tr/tahvil-bono-eurobond-hesaplama-araci.aspx?pageID=2378), 
+[Ziraatbank](https://www.ziraatbank.com.tr/tr/bireysel/yatirim/eurobond#)
+
+
 The code is "fragile" as bank sites can easily add anti-crawler rules and captchas.
 
 Further TODO is to visualize the retrospective data via Tableau or other tools.
