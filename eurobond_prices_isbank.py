@@ -12,7 +12,7 @@ from selenium.webdriver.chrome.service import Service
 
 # define target file to write into
 dir_path = Path("./data/isbank/")
-date = datetime.now().strftime("%d-%m-%Y")
+date = datetime.now().strftime("%Y-%m-%d")
 file_name = "isbank_eurobond_" + date + ".csv"
 file_path = dir_path.joinpath(file_name)
 

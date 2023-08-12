@@ -58,7 +58,7 @@ def find_num_of_rows():
 
 # define target file to write into
 dir_path = Path("./data/ziraatbank/")
-date = datetime.now().strftime("%d-%m-%Y")
+date = datetime.now().strftime("%Y-%m-%d")
 file_name = "ziraatbank_eurobond_" + date + ".csv"
 file_path = dir_path.joinpath(file_name)
 

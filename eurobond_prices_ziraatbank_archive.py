@@ -67,7 +67,7 @@ options.add_argument("--disable-extensions")
 options.add_argument("--disable-gpu")
 options.add_argument("--disable-dev-shm-usage")
 driver = webdriver.Chrome(service=service, options=options)
-dates = pd.bdate_range(start="2023-08-09", end="2023-08-12").to_pydatetime().tolist()
+dates = pd.bdate_range(start="2014-08-09", end="2023-08-12").to_pydatetime().tolist()
 dir_path = Path("./data/ziraatbank/")
 
 # equivalently pd.date_range(end = datetime.today(), periods = 100).to_pydatetime().tolist()

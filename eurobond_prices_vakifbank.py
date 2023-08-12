@@ -40,7 +40,7 @@ def find_item(i, j):
 # define target file to write into
 script_directory = os.path.dirname(os.path.abspath(sys.argv[0]))
 dir_path = Path(script_directory).joinpath(Path("./data/vakifbank/"))
-date = datetime.now().strftime("%d-%m-%Y")
+date = datetime.now().strftime("%Y-%m-%d")
 file_name_buy = "vakifbank(buy)_eurobond_" + date + ".csv"
 file_name_sell = "vakifbank(sell)_eurobond_" + date + ".csv"
 file_path_buy = dir_path.joinpath(file_name_buy)
