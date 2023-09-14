@@ -27,6 +27,7 @@ def append_data(rows, cols):
 
 
 def find_item(i, j):
+    time.sleep(0.1)
     return driver.find_element(
         By.XPATH,
         "/html/body/form/div[5]/div[3]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr["
@@ -62,16 +63,16 @@ driver.implicitly_wait(10)
 driver.get(
     "https://www.vakifbank.com.tr/tahvil-bono-eurobond-hesaplama-araci.aspx?pageID=2378"
 )
-driver.implicitly_wait(10)
+driver.implicitly_wait(15)
 select = Select(driver.find_element(By.NAME, "ctl00$ctl10$ctl00$ddlTahvilBonoUrun"))
 select.select_by_value('2')
-driver.implicitly_wait(10)
+driver.implicitly_wait(15)
 select_action = Select(driver.find_element(By.NAME, "ctl00$ctl10$ctl00$ddlTahvilIslemTipi"))
 select_action.select_by_value('1')
-driver.implicitly_wait(10)
+driver.implicitly_wait(15)
 
-cols = len(driver.find_elements(By.XPATH,"/html/body/form/div[5]/div[3]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr[1]/td"))+1
-rows = len(driver.find_elements(By.XPATH,"/html/body/form/div[5]/div[3]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr"))+1
+cols = len(driver.find_elements(By.XPATH,"/html/body/form/div[5]/div[3]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr[1]/td"))
+rows = len(driver.find_elements(By.XPATH,"/html/body/form/div[5]/div[3]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr"))
 header_row = []
 for p in range(2, cols):
     header_row.append(find_item(1, p))
@@ -80,7 +81,7 @@ data = []
 print("num of cols: " + str(cols))
 print("num of rows: " + str(rows))
 append_data(rows, cols)
-time.sleep(1)
+time.sleep(2)
 # Write into the csv file
 with open(file_path_buy, "w", newline="") as csv_file:
     csv_writer = csv.writer(csv_file)
@@ -91,13 +92,11 @@ with open(file_path_buy, "w", newline="") as csv_file:
 driver.implicitly_wait(10)
 select_name = Select(driver.find_element(By.NAME, "ctl00$ctl10$ctl00$ddlTahvilIslemTipi"))
 select_name.select_by_value('2')
-driver.implicitly_wait(10)
+driver.implicitly_wait(15)
 data = []
-rows = len(driver.find_elements(By.XPATH,"/html/body/form/div[5]/div[3]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr"))+1
-print("sell rows: " +str(rows))
 
 append_data(rows, cols)
-time.sleep(1)
+time.sleep(2)
 
 # Write into the csv file
 with open(file_path_sell, "w", newline="") as csv_file:
