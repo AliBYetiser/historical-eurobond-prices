@@ -4,7 +4,7 @@ Eurobonds are debt instruments used by governments, corporations, and other enti
 
 The value of eurobonds hing on a range of interconnected factors. It is influenced by prevailing interest rates, issuer credit quality, bond's maturity timeline, supply and demand dynamics, currency exchange rates between the bond's denomination and investors' currency, market sentiment, economic conditions, and inflation expectations. Liquidity, determined by ease of trading, impacts value stability. Callable or convertible features can introduce variability. Overall market conditions, encompassing economic growth, monetary policies, and volatility, collectively contribute to eurobond value fluctuations.
 
-There is a lack of available public historical data on both government and private eurobonds in Turkey except for one government bank. **This repository functions to gather data, running daily on google cloud, from one private bank (Isbank) and a government banks (Ziraatbank) where the latter also provides retrospective data.** 
+There is a lack of available public historical data on both government and private eurobonds in Turkey except for one government bank. **This repository functions to gather data, running daily on google cloud, from one private bank (Isbank) and a government bank (Ziraatbank) where the latter also provides retrospective data.** 
 
 Data pulled from:
 [Isbank](https://www.isbank.com.tr/eurobond-fiyatlari), 
